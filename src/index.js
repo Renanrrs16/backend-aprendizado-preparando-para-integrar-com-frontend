@@ -1,6 +1,7 @@
 require('dotenv').config()
 const express = require('express')
 const { connectToDatabase } = require('./db/database-connection')
+const cors = require('cors')
 
 //Routers
 const personagemRouter = require('./personagem/personagem.router')
@@ -16,6 +17,8 @@ async function main() {
   //Middlewares
   //Sinaliza para o Express que estamos usando JSON no Body
   app.use(express.json())
+  app.use(cors())
+
 
   //Endpoit de Hellor world
   app.get('/', function (req, res) {
