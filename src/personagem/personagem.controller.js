@@ -69,7 +69,7 @@ async function deleteByID(req, res) {
   await service.deleteByID(id)
 
   // Enviamos uma mensagem de sucesso
-  res.send('Item deletado com sucesso: ' + id)
+  res.status(204).send()
 }
 
 module.exports = {
